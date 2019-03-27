@@ -11,7 +11,7 @@ React is a declarative, efficient, and flexible JavaScript library for building 
 
 React has a few different kinds of components, but we’ll start with `React.Component` subclasses:
 
-class Example extends React.Component {
+`class Example extends React.Component {
   render() {
     return (
       <div className="example">
@@ -22,7 +22,7 @@ class Example extends React.Component {
       </div>
     );
   }
-}
+}`
 
 We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
 
@@ -47,7 +47,7 @@ Notice how with onClick={() => alert('click')}, we’re passing a function as th
 
 React components can have state by setting `this.state` in their constructors. `this.state` should be considered as private to a React component that it’s defined in. Let’s store the current value of the button in this.state, and change it when the button is clicked.
 
-class Example extends React.Component {
+`class Example extends React.Component {
   constructor(props) {
     super(props);
     this.sate = {
@@ -65,7 +65,7 @@ class Example extends React.Component {
       </div>
     );
   }
-}
+}`
 
 In `JavaScript classes`, you need to always call `super` when defining the constructor of a subclass. All React component classes that have a `constructor` should start it with a `super(props)` call.
 
