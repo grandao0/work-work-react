@@ -11,7 +11,8 @@ React is a declarative, efficient, and flexible JavaScript library for building 
 
 React has a few different kinds of components, but we’ll start with `React.Component` subclasses:
 
-`class Example extends React.Component {
+```
+class Example extends React.Component {
   render() {
     return (
       <div className="example">
@@ -22,7 +23,8 @@ React has a few different kinds of components, but we’ll start with `React.Com
       </div>
     );
   }
-}`
+}
+```
 
 We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
 
@@ -47,7 +49,8 @@ Notice how with onClick={() => alert('click')}, we’re passing a function as th
 
 React components can have state by setting `this.state` in their constructors. `this.state` should be considered as private to a React component that it’s defined in. Let’s store the current value of the button in this.state, and change it when the button is clicked.
 
-`class Example extends React.Component {
+```
+class Example extends React.Component {
   constructor(props) {
     super(props);
     this.sate = {
@@ -65,7 +68,8 @@ React components can have state by setting `this.state` in their constructors. `
       </div>
     );
   }
-}`
+}
+```
 
 In `JavaScript classes`, you need to always call `super` when defining the constructor of a subclass. All React component classes that have a `constructor` should start it with a `super(props)` call.
 
@@ -83,19 +87,23 @@ There are generally two approaches to changing data. The first approach is to mu
 
 Data Change with Mutation
 
-`var player = {score: 1, name: 'Jeff'};
+```
+var player = {score: 1, name: 'Jeff'};
 player.score = 2;
-// Now player is {score: 2, name: 'Jeff'}`
+// Now player is {score: 2, name: 'Jeff'}
+```
 
 Data Change without Mutation
 
-`var player = {score: 1, name: 'Jeff'};
+```
+var player = {score: 1, name: 'Jeff'};
 
 var newPlayer = Object.assign({}, player, {score: 2});
 // Now player is unchanged, but newPlayer is {score: 2, name: 'Jeff'}
 
 // Or if you are using object spread syntax proposal, you can write:
-// var newPlayer = {...player, score: 2};`
+// var newPlayer = {...player, score: 2};
+```
 
 The end result is the same but by not mutating (or changing the underlying data) directly, we gain several benefits described below.
 
